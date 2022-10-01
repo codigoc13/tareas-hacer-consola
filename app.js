@@ -1,6 +1,6 @@
 require('colors')
+const { inquirerMenu } = require('./helpers/inquirer')
 
-const { mostrarMenu, pausa } = require('./helpers/mensajes')
 console.clear()
 
 const main = async () => {
@@ -8,18 +8,9 @@ const main = async () => {
   let opt = ''
 
   do {
-    opt = await mostrarMenu()
-    // console.log({ opt })
-    if (opt !== '0') await pausa()
+    opt = await inquirerMenu()
+    console.log(opt)
   } while (opt !== '0')
 }
-
-/**
- * ¿Qué pasaría si queremos que el usuario pudiera navegar con las
- *  teclas de dirección por las diferentes opciones?
- * Ya vemos lo tedioso que sería.
- * Para ello, reconstruiremos todo esto con una librería que ya alguien
- * ha creado.
- */
 
 main()

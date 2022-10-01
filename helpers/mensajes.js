@@ -2,11 +2,6 @@ const colors = require('colors')
 
 const mostrarMenu = () => {
   return new Promise((resolve) => {
-    console.clear()
-    console.log(colors.green('========================='))
-    console.log('  Seleccione una opción'.green)
-    console.log(colors.green('=========================\n'))
-
     console.log(`${'1.'.green} Crear una tarea`)
     console.log(`${'2.'.green} Listar tareas`)
     console.log(`${'3.'.green} Listar tareas completadas`)
