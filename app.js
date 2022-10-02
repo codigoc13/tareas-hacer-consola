@@ -6,6 +6,7 @@ const {
   pausa,
   leerInput,
   listadoTareasBorrar,
+  confirmar,
 } = require('./helpers/inquirer')
 const Tareas = require('./models/tareas')
 
@@ -37,8 +38,15 @@ const main = async () => {
         break
       case '6':
         const id = await listadoTareasBorrar(tareas.getListadoArr)
-        // Hacer la confirmación para borrar
-        console.log({ id })
+        // console.log({ id })
+        if (id !== '0') {
+          const resp = await confirmar('¿Está seguro?')
+          // console.log({ resp })
+          if (resp) {
+            tareas.borrarTarea(id)
+            console.log('Tarea borrada')
+          }
+        }
         break
     }
 
