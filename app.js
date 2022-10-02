@@ -39,7 +39,8 @@ const main = async () => {
         break
       case '5':
         const ids = await mostrarListadoChecklist(tareas.getListadoArr)
-        console.log({ ids })
+        // console.log({ ids })
+        tareas.toggleCompletdas(ids)
         break
       case '6':
         const id = await listadoTareasBorrar(tareas.getListadoArr)
