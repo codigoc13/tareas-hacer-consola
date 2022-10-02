@@ -1,1 +1,12 @@
-[{"id":"f14a56a7-8dfe-4061-9273-7410994de07d","desc":"Piedra del alma","completadoEn":null},{"id":"c0f0fdd8-0fdd-4b9a-8917-a4d20fa851e1","desc":"Piedra del poder","completadoEn":null}]
+[
+  {
+    "id": "f14a56a7-8dfe-4061-9273-7410994de07d",
+    "desc": "Piedra del alma",
+    "completadoEn": "13245631"
+  },
+  {
+    "id": "c0f0fdd8-0fdd-4b9a-8917-a4d20fa851e1",
+    "desc": "Piedra del poder",
+    "completadoEn": null
+  }
+]
