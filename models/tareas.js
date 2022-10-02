@@ -46,13 +46,19 @@ class Tareas {
       const estado = completadoEn ? 'Completada'.green : 'Pendiente'.red
       if (completadas && estado === 'Completada'.green) {
         contador++
-        console.log(`${(contador + '.').green} ${desc} :: ${estado}`)
+        console.log(`${(contador + '.').green} ${desc} :: ${completadoEn}`)
       }
       if (!completadas && estado === 'Pendiente'.red) {
         contador++
         console.log(`${(contador + '.').green} ${desc} :: ${estado}`)
       }
     })
+  }
+
+  borrarTarea(id = '') {
+    if (this._listado[id]) {
+      delete this._listado[id]
+    }
   }
 }
 
