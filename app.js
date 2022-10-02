@@ -1,7 +1,8 @@
 require('colors')
+const { triggerAsyncId } = require('async_hooks')
 const { inquirerMenu, pausa } = require('./helpers/inquirer')
-
-console.clear()
+const Tarea = require('./models/tarea')
+const Tareas = require('./models/tareas')
 
 const main = async () => {
   console.log('Hola mundo')
@@ -10,6 +11,14 @@ const main = async () => {
   do {
     opt = await inquirerMenu()
     console.log({ opt })
+    const tareas = new Tareas()
+    console.log(tareas)
+    const tarea = new Tarea('Comprar comida')
+    console.log(tarea)
+
+    tareas._listado[tarea.id] = tarea
+    console.log(tareas)
+
     await pausa()
   } while (opt !== '0')
 }
